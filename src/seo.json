@@ -1,0 +1,7 @@
+{
+  "glitch-help-instructions": "For a custom domain, change the 'url' parameter from 'glitch-default' to your domain _without_ a traling slash, like 'https://www.example.com'",
+  "title": "クリックしてハイライトできるポケモン相性表",
+  "description": "",
+  "url": "glitch-default",
+  "image": ""
+}
