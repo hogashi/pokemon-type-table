@@ -69,7 +69,8 @@ export default function Home() {
   
   return (
     <div>
-      <p>クリックでハイライト</p>
+      <h1>クリックしてハイライトできるポケモン相性表</h1>
+      <p>左右で縦横逆に選択されます</p>
       <p>
         <button onClick={onFlipButtonClick}>縦横の選択を入れ替える</button>
       </p>
