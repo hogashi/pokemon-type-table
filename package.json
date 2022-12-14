@@ -22,9 +22,6 @@
     ">0.2%",
     "not dead"
   ],
-  "engines": {
-    "node": "12.x"
-  },
   "repository": {
     "url": "https://glitch.com/edit/#!/glitch-hello-react"
   },
