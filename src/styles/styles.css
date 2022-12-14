@@ -121,6 +121,7 @@ body {
 }
 
 /* Page titles */
+/*
 h1 {
   color: #2800FF;
   font-family: HK Grotesk;
@@ -132,6 +133,7 @@ h1 {
 .page h1 {
   font-size: 48px;
 }
+*/
 
 .page p {
   line-height: 1.5;

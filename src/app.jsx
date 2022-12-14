@@ -14,7 +14,7 @@ import React, { useState, useCallback } from "react";
 import "./styles/styles.css";
 
 // Home function that is reflected across the site
-export default function Home() {  
+export default function Home() {
   const types = ['ノ', '炎', '水', '電', '草', '氷', '格', '毒', '地', '飛', '超', '虫', '岩', '霊', '竜', '悪', '鋼', '妖'];
   const aishos = [
     // ノ 炎 水 電 草 氷 格 毒 地 飛 超 虫 岩 霊 竜 悪 鋼 妖
@@ -43,10 +43,10 @@ export default function Home() {
     " ": 1,
     "●": 2,
   };
-  
+
   const [clickedAtts, setClickedAtts] = useState([]);
   const [clickedDefs, setClickedDefs] = useState([]);
-  
+
   const onClickAtt = useCallback((i) => {
     const newClickedAtts = [...clickedAtts];
     newClickedAtts[i] = !newClickedAtts[i];
@@ -57,7 +57,7 @@ export default function Home() {
     newClickedDefs[i] = !newClickedDefs[i];
     setClickedDefs(newClickedDefs);
   }, [clickedDefs]);
-  
+
   const onFlipButtonClick = useCallback(() => {
     setClickedAtts([...clickedDefs]);
     setClickedDefs([...clickedAtts]);
@@ -66,10 +66,10 @@ export default function Home() {
     setClickedAtts([]);
     setClickedDefs([]);
   }, [clickedAtts, clickedDefs]);
-  
+
   return (
     <div>
-      <h1>クリックしてハイライトできるポケモン相性表</h1>
+      <div role="heading">クリックしてハイライトできるポケモン相性表</div>
       <p>左右で縦横逆に選択されます</p>
       <p>
         <button onClick={onFlipButtonClick}>縦横の選択を入れ替える</button>
