@@ -73,54 +73,110 @@ export default function Home() {
       <p>
         <button onClick={onFlipButtonClick}>縦横の選択を入れ替える</button>
       </p>
-      <div class="poke-title">防御側のポケモンのタイプ</div>
-      <div class="container2">
-        <div class="waza-title">使用するわざのタイプ</div>
-        <table>
-          <tbody>
-            <tr>
-              <th></th>
-              {
-                types.map((t, i) => (
-                  <th
-                    class={`type-def-${i} ${clickedDefs[i] ? 'clicked' : ''}`}
-                    onClick={() => onClickDef(i)}
-                  >{t}</th>
-                ))
-              }
-            </tr>
-            {
-              types.map((t, i) => (
+      <div class="tables">
+        <div class="tables-table">
+          <div class="poke-title">防御側のポケモンのタイプ</div>
+          <div class="container2">
+            <div class="waza-title">使用するわざのタイプ</div>
+            <table>
+              <tbody>
                 <tr>
-                  <th
-                    class={`type-att-${i} ${clickedAtts[i] ? 'clicked' : ''}`}
-                    onClick={() => onClickAtt(i)}
-                  >
-                    {t}
-                  </th>
+                  <th></th>
                   {
-                    aishos[i].map((a, j) => (
-                      <td
-                        class={[
-                          `aisho-att-${i}`,
-                          `aisho-def-${j}`,
-                          clickedAtts[i] || clickedDefs[j] ? 'clicked' : '',
-                        ].join(' ')}
-                        data-aisho={aishoToNumber[a]}
-                        onClick={() => {
-                          onClickAtt(i);
-                          onClickDef(j);
-                        }}
-                      >
-                        {a}
-                      </td>
+                    types.map((t, i) => (
+                      <th
+                        class={`type-def-${i} ${clickedDefs[i] ? 'clicked' : ''}`}
+                        onClick={() => onClickDef(i)}
+                      >{t}</th>
                     ))
                   }
                 </tr>
-              ))
-            }
-          </tbody>
-        </table>
+                {
+                  types.map((t, i) => (
+                    <tr>
+                      <th
+                        class={`type-att-${i} ${clickedAtts[i] ? 'clicked' : ''}`}
+                        onClick={() => onClickAtt(i)}
+                      >
+                        {t}
+                      </th>
+                      {
+                        aishos[i].map((a, j) => (
+                          <td
+                            class={[
+                              `aisho-att-${i}`,
+                              `aisho-def-${j}`,
+                              clickedAtts[i] || clickedDefs[j] ? 'clicked' : '',
+                            ].join(' ')}
+                            data-aisho={aishoToNumber[a]}
+                            onClick={() => {
+                              onClickAtt(i);
+                              onClickDef(j);
+                            }}
+                          >
+                            {a}
+                          </td>
+                        ))
+                      }
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="tables-table">
+          <div class="poke-title">防御側のポケモンのタイプ</div>
+          <div class="container2">
+            <div class="waza-title">使用するわざのタイプ</div>
+            <table>
+              <tbody>
+                <tr>
+                  <th></th>
+                  {
+                    types.map((t, i) => (
+                      <th
+                        class={`type-att-${i} ${clickedAtts[i] ? 'clicked' : ''}`}
+                        onClick={() => onClickAtt(i)}
+                      >{t}</th>
+                    ))
+                  }
+                </tr>
+                {
+                  types.map((t, i) => (
+                    <tr>
+                      <th
+                        class={`type-def-${i} ${clickedDefs[i] ? 'clicked' : ''}`}
+                        onClick={() => onClickDef(i)}
+                      >
+                        {t}
+                      </th>
+                      {
+                        aishos[i].map((a, j) => (
+                          <td
+                            class={[
+                              `aisho-def-${i}`,
+                              `aisho-att-${j}`,
+                              clickedDefs[i] || clickedAtts[j] ? 'clicked' : '',
+                            ].join(' ')}
+                            data-aisho={aishoToNumber[a]}
+                            onClick={() => {
+                              onClickDef(i);
+                              onClickAtt(j);
+                            }}
+                          >
+                            {a}
+                          </td>
+                        ))
+                      }
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
       <br></br>
       <br></br>
